@@ -1,0 +1,151 @@
+{
+  "config": {
+    "seed": 0,
+    "image_size": 64,
+    "n_gold": 200,
+    "n_noisy": 80,
+    "n_mislabeled": 80,
+    "bc_epochs": 50,
+    "bc_hidden": 64,
+    "bc_weight_decay": 0.001,
+    "bc_obs_noise": 0.05,
+    "vla_epochs": 25,
+    "ppo_timesteps": 49152,
+    "eval_episodes": 40,
+    "with_clip": true,
+    "clip_model": "openai/clip-vit-base-patch32"
+  },
+  "validation_passed": true,
+  "validation_summary": {
+    "structural_failures": 0,
+    "gold_standard_passes": 200,
+    "gold_episodes": 200,
+    "by_quality": {
+      "gold": {
+        "episodes": 200.0,
+        "success_rate": 1.0,
+        "mean_length": 15.725,
+        "mean_smoothness": 0.0982803000823918,
+        "structural_failures": 0.0,
+        "quality_issues": 0.0
+      },
+      "noisy": {
+        "episodes": 80.0,
+        "success_rate": 0.2125,
+        "mean_length": 45.1875,
+        "mean_smoothness": 0.7321731526717612,
+        "structural_failures": 0.0,
+        "quality_issues": 0.0
+      },
+      "mislabeled": {
+        "episodes": 80.0,
+        "success_rate": 0.025,
+        "mean_length": 48.9125,
+        "mean_smoothness": 0.03387110553163256,
+        "structural_failures": 0.0,
+        "quality_issues": 2.0
+      }
+    },
+    "stats": {
+      "mean_episode_length": 29.647222222222222,
+      "max_kinematic_error": 4.50946390451179e-07,
+      "mean_smoothness": 0.22483222409097184,
+      "success_rate": 0.6083333333333333,
+      "mean_image_std": 50.15082551108466
+    }
+  },
+  "results": [
+    {
+      "method": "expert",
+      "data": "scripted",
+      "success_rate": 1.0,
+      "mean_return": 8.665604791978655,
+      "mean_final_distance": 0.10483586820692914,
+      "n": 40
+    },
+    {
+      "method": "random",
+      "data": "none",
+      "success_rate": 0.05,
+      "mean_return": 1.3337020557577028,
+      "mean_final_distance": 1.8013176515136127,
+      "n": 40
+    },
+    {
+      "method": "behavior cloning",
+      "data": "gold",
+      "success_rate": 0.7,
+      "mean_return": 11.969600146173713,
+      "mean_final_distance": 0.15888489226420627,
+      "n": 40
+    },
+    {
+      "method": "behavior cloning",
+      "data": "noisy",
+      "success_rate": 0.025,
+      "mean_return": 3.846964433982545,
+      "mean_final_distance": 1.2125156926571221,
+      "n": 40
+    },
+    {
+      "method": "behavior cloning",
+      "data": "mislabeled",
+      "success_rate": 0.075,
+      "mean_return": 2.4571646055189076,
+      "mean_final_distance": 1.6265430762017707,
+      "n": 40
+    },
+    {
+      "method": "vla",
+      "data": "gold",
+      "success_rate": 0.175,
+      "mean_return": 4.676618558270478,
+      "mean_final_distance": 1.0097774946526747,
+      "n": 40
+    },
+    {
+      "method": "vla",
+      "data": "noisy",
+      "success_rate": 0.025,
+      "mean_return": 1.4290047496594087,
+      "mean_final_distance": 1.6067425239774686,
+      "n": 40
+    },
+    {
+      "method": "vla",
+      "data": "mislabeled",
+      "success_rate": 0.025,
+      "mean_return": 3.018982486688712,
+      "mean_final_distance": 1.3810258074362813,
+      "n": 40
+    },
+    {
+      "method": "ppo",
+      "data": "online",
+      "success_rate": 0.1,
+      "mean_return": 8.000496857965487,
+      "mean_final_distance": 0.7804806726809969,
+      "n": 40
+    },
+    {
+      "method": "vla-clip",
+      "data": "gold",
+      "success_rate": 0.2,
+      "mean_return": 4.050979532632266,
+      "mean_final_distance": 1.141958834535463,
+      "n": 40
+    }
+  ],
+  "bc_final_loss": {
+    "gold": 0.018433331495923817,
+    "noisy": 0.37349434147072363,
+    "mislabeled": 0.011696016857219174
+  },
+  "vla_final_loss": {
+    "gold": 0.011244198081449315,
+    "noisy": 0.3443288727337559,
+    "mislabeled": 0.0018037686029181584,
+    "clip-gold": 0.020318513261435616
+  },
+  "ppo_episodes": 1067
+}

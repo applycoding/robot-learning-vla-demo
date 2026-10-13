@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "simreach"
+version = "0.1.0"
+description = "Data-centric robot learning demo on a planar arm: demonstrations, BC, PPO, and a VLA policy."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "Arpan Bom", email = "applycoding@gmail.com" }]
+dependencies = [
+    "numpy>=1.26",
+    "gymnasium>=0.29",
+    "torch>=2.2",
+    "stable-baselines3>=2.3",
+    "h5py>=3.10",
+    "matplotlib>=3.8",
+    "pillow>=10",
+    "transformers>=4.44",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+simreach = "simreach.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["simreach*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-q --tb=short"

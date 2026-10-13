@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.0.0",
+  "num_episodes": 360,
+  "num_transitions": 10673,
+  "structural_failures": 0,
+  "gold_episodes": 200,
+  "gold_standard_passes": 200,
+  "gold_standard_pass_rate": 1.0,
+  "by_quality": {
+    "gold": {
+      "episodes": 200.0,
+      "success_rate": 1.0,
+      "mean_length": 15.725,
+      "mean_smoothness": 0.0982803000823918,
+      "structural_failures": 0.0,
+      "quality_issues": 0.0
+    },
+    "noisy": {
+      "episodes": 80.0,
+      "success_rate": 0.2125,
+      "mean_length": 45.1875,
+      "mean_smoothness": 0.7321731526717612,
+      "structural_failures": 0.0,
+      "quality_issues": 0.0
+    },
+    "mislabeled": {
+      "episodes": 80.0,
+      "success_rate": 0.025,
+      "mean_length": 48.9125,
+      "mean_smoothness": 0.03387110553163256,
+      "structural_failures": 0.0,
+      "quality_issues": 2.0
+    }
+  },
+  "stats": {
+    "mean_episode_length": 29.647222222222222,
+    "max_kinematic_error": 4.50946390451179e-07,
+    "mean_smoothness": 0.22483222409097184,
+    "success_rate": 0.6083333333333333,
+    "mean_image_std": 50.15082551108466
+  },
+  "passed": true,
+  "flagged_episodes": [
+    {
+      "index": 281,
+      "seed": 10281,
+      "quality": "mislabeled",
+      "structural": [],
+      "quality_issues": [
+        "mislabeled trajectory reached the instructed target"
+      ]
+    },
+    {
+      "index": 324,
+      "seed": 10324,
+      "quality": "mislabeled",
+      "structural": [],
+      "quality_issues": [
+        "mislabeled trajectory reached the instructed target"
+      ]
+    }
+  ]
+}

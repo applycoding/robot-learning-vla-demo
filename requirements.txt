@@ -1,0 +1,10 @@
+# CPU PyTorch: pip install torch --index-url https://download.pytorch.org/whl/cpu
+numpy>=1.26
+gymnasium>=0.29
+torch>=2.2
+stable-baselines3>=2.3
+h5py>=3.10
+matplotlib>=3.8
+pillow>=10
+transformers>=4.44
+pytest>=8.0
